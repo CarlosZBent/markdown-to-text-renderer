@@ -14,6 +14,7 @@ let plaintext = convertMarkdownToPlainText(md_text)
 ### Adding custom options
 Marked accepts [options](https://marked.js.org/using_advanced#options) that allow the user to customize its behavior.
 You can pass this options as second *optional* argument to the `convertMarkdownToPlainText()` function.
+> NOTE: For this conversion to plain text, it is recommended to always set the `sanitize` option to `false`, to avoid encoding issues. Besides that, `mangle` and `headerIds` should also be set to `false`, this is because these options are deprectaed, but marked still sets them to true by default. These are all set by default by this library. But if you set your own options, you'll override the default ones, so don't forget to specify `{sanitize:false, mangle:false, headerIds:false}` when adding yours.
 ```
 import { convertMarkdownToPlainText } from "markdown-to-text-renderer";
 
@@ -28,4 +29,3 @@ let options = {
 
 let plaintext = convertMarkdownToPlainText(md_text, options)
 ```
-> NOTE: For this conversion to plain text, it is recommended to always set the `sanitize` option to `false`, to avoid encoding issues. Besides that, `mangle` and `headerIds` should also be set to `false`, this is because these options are deprectaed, but marked still sets them to true by default. These are all set by default by this library. But if you set your own options, you'll override the default ones, so don't forget to specify `{sanitize:false, mangle:false, headerIds:false}` when adding yours.
