@@ -1,9 +1,13 @@
 import { marked } from "marked";
 import { PlainTextRenderer } from "./PlainTextRenderer";
 
-function convertMarkdownToPlainText(markdownText, marked_options) {
+let defaultOptions = {
+  sanitize: false
+}
+
+function convertMarkdownToPlainText(markdownText, markedOptions = defaultOptions) {
     const renderer = new PlainTextRenderer();
-    marked.setOptions(marked_options);
+    marked.setOptions(markedOptions);
     return marked(markdownText, { renderer })
   }
 
