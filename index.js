@@ -1,8 +1,10 @@
 import { marked } from "marked";
-import { PlainTextRenderer } from "./PlainTextRenderer";
+import { PlainTextRenderer } from "./PlainTextRenderer.js";
 
 let defaultOptions = {
-  sanitize: false
+  sanitize: false,
+  mangle: false,
+  headerIds: false
 }
 
 function convertMarkdownToPlainText(markdownText, markedOptions = defaultOptions) {

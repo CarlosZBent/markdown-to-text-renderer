@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "An extension for the marked library to easily convert from markdown format to plaintext",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

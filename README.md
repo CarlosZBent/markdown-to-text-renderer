@@ -20,10 +20,12 @@ import { convertMarkdownToPlainText } from "markdown-to-text-renderer";
 let md_text = "If you wanna be a **cool cowboy** you should play [Red Dead Redemption](https://www.rockstargames.com/reddeadredemption/)"
 
 let options = {
-    sanitize: false, // please always set sanitize to false in your options
-    mangle: false
+    // please always set these three if you set your own options
+    sanitize: false,
+    mangle: false,
+    headerIds: false
 }
 
 let plaintext = convertMarkdownToPlainText(md_text, options)
 ```
-> NOTE: For this conversion to plain text, it is recommended to always set the `sanitize` option to `false`, to avoid encoding issues. This is set by default by this library as the only option. But if you set your own options, you'll override the default one, so don't forget to specify `{sanitize:false}` when adding yours.
+> NOTE: For this conversion to plain text, it is recommended to always set the `sanitize` option to `false`, to avoid encoding issues. Besides that, `mangle` and `headerIds` should also be set to `false`, this is because these options are deprectaed, but marked still sets them to true by default. These are all set by default by this library. But if you set your own options, you'll override the default ones, so don't forget to specify `{sanitize:false, mangle:false, headerIds:false}` when adding yours.
