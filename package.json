@@ -1,6 +1,6 @@
 {
   "name": "markdown-to-text-renderer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An extension for the marked library to easily convert from markdown format to plaintext",
   "main": "index.js",
   "type": "module",
@@ -16,5 +16,9 @@
   "license": "ISC",
   "dependencies": {
     "marked": "^5.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CarlosZBent/markdown-to-text-renderer"
   }
 }
