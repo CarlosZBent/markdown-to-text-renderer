@@ -1,6 +1,6 @@
 # markdown-to-text-renderer
 
-A concise extension to the [marked](https://marked.js.org/) library, focused on converting text written in markdown format to plain text, reomving all special characters.
+A concise extension to the [marked](https://marked.js.org/) library, focused on converting text written in markdown format to plain text, removing all special characters.
 
 ## Usage 1 - Markdown to plain text conversion
 ### For basic markdown to plain text conversion:
@@ -28,16 +28,22 @@ let options = {
 }
 
 let plaintext = convertMarkdownToPlainText(md_text, options)
+
+console.log(plaintext)
+> If you wanna be a cool cowboy you should play Red Dead Redemption
 ```
 ***
-## Usage 2 - Converting ASCCI HTML numbers and codes to text
+## Usage 2 - Converting ASCII HTML numbers and codes to text
 Some special characters, such as "&" or "$", could end up being rendered as ASCII HTML Numbers or Codes after their conversion. In this case, the text "The Knicks & the Mets are from New York" would be rendered as "The Knicks \&amp; the Mets are from New York"
 
 To solve this you can use the `convertASCIICharsToText()` function.
 ```
 import { convertASCIICharsToText } from "markdown-to-text-renderer";
 
-let specialCharsString = "The Bucks & the Brewers are from Milwaukee"
+let specialCharsString = "The Bucks &amp; the Brewers are from Milwaukee"
 
-let convertedString = convertASCIICharsToText("The Bucks & the Brewers are from Milwaukee")
+let convertedString = convertASCIICharsToText(specialCharsString)
+
+console.log(convertedString)
+> The Bucks & the Brewers are from Milwaukee
 ```
