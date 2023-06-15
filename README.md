@@ -2,6 +2,8 @@
 
 A concise extension to the [marked](https://marked.js.org/) library, focused on converting text written in markdown format to plain text, removing all special characters.
 
+Inspired by the [marked-plaintext](https://github.com/etler/marked-plaintext) library.
+
 ## Usage 1 - Markdown to plain text conversion
 ### For basic markdown to plain text conversion:
 ```
